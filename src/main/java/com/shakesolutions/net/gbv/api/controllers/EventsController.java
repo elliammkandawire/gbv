@@ -2,9 +2,7 @@ package com.shakesolutions.net.gbv.api.controllers;
 
 import com.shakesolutions.net.gbv.api.entity.Events;
 import com.shakesolutions.net.gbv.api.entity.GetPageRequest;
-import com.shakesolutions.net.gbv.api.entity.Webinars;
 import com.shakesolutions.net.gbv.api.services.EventsService;
-import com.shakesolutions.net.gbv.api.services.WebinarsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

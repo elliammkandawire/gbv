@@ -1,9 +1,7 @@
 package com.shakesolutions.net.gbv.api.controllers;
 
 import com.shakesolutions.net.gbv.api.entity.GetPageRequest;
-import com.shakesolutions.net.gbv.api.entity.Team;
 import com.shakesolutions.net.gbv.api.entity.Vacancy;
-import com.shakesolutions.net.gbv.api.services.TeamService;
 import com.shakesolutions.net.gbv.api.services.VacancyService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,9 +2,7 @@ package com.shakesolutions.net.gbv.api.controllers;
 
 import com.shakesolutions.net.gbv.api.entity.GetPageRequest;
 import com.shakesolutions.net.gbv.api.entity.News;
-import com.shakesolutions.net.gbv.api.entity.Publications;
 import com.shakesolutions.net.gbv.api.services.NewsService;
-import com.shakesolutions.net.gbv.api.services.PublicationsServices;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

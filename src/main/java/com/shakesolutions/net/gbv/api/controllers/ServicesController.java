@@ -2,7 +2,6 @@ package com.shakesolutions.net.gbv.api.controllers;
 
 import com.shakesolutions.net.gbv.api.entity.GetPageRequest;
 import com.shakesolutions.net.gbv.api.entity.Services;
-import com.shakesolutions.net.gbv.api.entity.TeamGroups;
 import com.shakesolutions.net.gbv.api.services.ServicesService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
