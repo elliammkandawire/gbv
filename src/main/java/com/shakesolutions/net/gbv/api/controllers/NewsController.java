@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @Controller
@@ -30,6 +27,29 @@ public class NewsController {
             return new ResponseEntity<>(false,HttpStatus.BAD_REQUEST);
         }
     }
+
+    @GetMapping("/single/{slug}")
+    private ResponseEntity single(@PathVariable("slug") String slug)
+    {
+        try{
+            return new ResponseEntity<>(service.single(slug), HttpStatus.OK);
+        }catch (Exception e){
+            log.error("Error "+e.getMessage());
+            return new ResponseEntity<>(false,HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @GetMapping("/latest")
+    private ResponseEntity latest5()
+    {
+        try{
+            return new ResponseEntity<>(service.latest(), HttpStatus.OK);
+        }catch (Exception e){
+            log.error("Error "+e.getMessage());
+            return new ResponseEntity<>(false,HttpStatus.BAD_REQUEST);
+        }
+    }
+
 
     @GetMapping("/all")
     private ResponseEntity all()

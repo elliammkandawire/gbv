@@ -23,7 +23,7 @@ public class EventsService {
 
     public Page<Events> getPage(GetPageRequest pageRequest) {
         log.info("Requesting news events for the following: "+pageRequest.toString());
-        return repository.findAll(PageRequest.of(pageRequest.getCurrentPage(), pageRequest.getRecordsPerPage(), Sort.by(Arrays.asList(Sort.Order.desc("event_date")))));
+        return repository.findAll(PageRequest.of(pageRequest.getCurrentPage(), pageRequest.getRecordsPerPage(), Sort.by(Arrays.asList(Sort.Order.desc("eventDate")))));
     }
 
     public Events add(Events data) {
@@ -34,5 +34,10 @@ public class EventsService {
     public List<Events> all() {
         log.info("Requesting all events");
         return repository.findAllByOrderByEventDateDesc();
+    }
+
+    public Object single(String slug) {
+        log.info("Requesting single event");
+        return repository.findById(slug);
     }
 }

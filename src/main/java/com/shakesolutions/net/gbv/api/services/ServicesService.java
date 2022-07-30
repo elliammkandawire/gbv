@@ -34,4 +34,9 @@ public class ServicesService {
         log.info("Requesting all service");
         return servicesRepository.findAll();
     }
+
+    public Object single(String slug) {
+        log.info("Requesting single service");
+        return servicesRepository.findById(slug);
+    }
 }

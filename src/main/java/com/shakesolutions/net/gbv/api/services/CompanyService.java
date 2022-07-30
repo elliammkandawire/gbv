@@ -32,7 +32,7 @@ public class CompanyService {
     }
 
     public List<Company> all() {
-        log.info("Requesting all service");
+        log.info("Requesting all companies list");
         return companyRepository.findAll();
     }
 }

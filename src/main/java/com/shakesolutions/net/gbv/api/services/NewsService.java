@@ -35,4 +35,14 @@ public class NewsService {
         log.info("Requesting all news");
         return repository.findAll();
     }
+
+    public News single(String slug) {
+        log.info("Requesting single news");
+        return repository.findById(slug).get();
+    }
+
+    public Object latest() {
+        log.info("Requesting latest news");
+        return repository.findFirst5ByOrderByDateDesc();
+    }
 }

@@ -18,6 +18,7 @@ public class Member {
     private String slug;
     private String name;
     private String picture;
+    private String website;
 
     @Column(columnDefinition="TEXT")
     private String description;

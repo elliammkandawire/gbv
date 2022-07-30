@@ -35,4 +35,9 @@ public class Company {
     @CreationTimestamp
     @Column(nullable =  false, updatable = false, columnDefinition="TIMESTAMP default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP")
     private Date date;
+    private String icon;
+    private String twitter;
+    private String facebook;
+    private String mobile_logo;
+    private String header;
 }

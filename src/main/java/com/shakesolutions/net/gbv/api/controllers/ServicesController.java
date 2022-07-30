@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Service
 @Slf4j
@@ -35,6 +32,17 @@ public class ServicesController {
     {
         try{
             return new ResponseEntity<>(servicesService.all(), HttpStatus.OK);
+        }catch (Exception e){
+            log.error("Error "+e.getMessage());
+            return new ResponseEntity<>(false,HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @GetMapping("/single/{slug}")
+    private ResponseEntity single(@PathVariable("slug") String slug)
+    {
+        try{
+            return new ResponseEntity<>(servicesService.single(slug), HttpStatus.OK);
         }catch (Exception e){
             log.error("Error "+e.getMessage());
             return new ResponseEntity<>(false,HttpStatus.BAD_REQUEST);
